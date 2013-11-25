@@ -1,0 +1,47 @@
+{
+  "name": "grunt-autoindex",
+  "description": "Writes an index.js file, ideal for Browserify.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mattdesl/grunt-autoindex",
+  "author": {
+    "name": "mattdesl",
+    "email": "dave.des@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Matt/grunt-autoindex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Matt/grunt-autoindex/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Matt/grunt-autoindex/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "klasse": "git://github.com/mattdesl/klasse",
+    "minivec": "git://github.com/mattdesl/minivec",
+    "fs-walk": "0.0.1"
+  }
+}
