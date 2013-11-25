@@ -31,17 +31,12 @@
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt": "~0.4.2"
+    "grunt": "~0.4.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.2"
+    "grunt": "~0.4.1"
   },
   "keywords": [
     "gruntplugin"
-  ],
-  "dependencies": {
-    "klasse": "git://github.com/mattdesl/klasse",
-    "minivec": "git://github.com/mattdesl/minivec",
-    "fs-walk": "0.0.1"
-  }
+  ]
 }
