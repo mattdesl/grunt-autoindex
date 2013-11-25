@@ -136,7 +136,6 @@ module.exports = function(grunt) {
 		var srcFolder = this.data.src;
 
 		var deps = options.dependencies || Object.keys( grunt.file.readJSON('package.json').dependencies );
-		console.log(deps)
 		buildIndex(grunt, file, srcFolder, deps, options.banner, 
 					options.modules, options.file_ignores, options.require_ignores);
 
