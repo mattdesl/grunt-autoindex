@@ -35,13 +35,16 @@ var buildIndex = function(grunt, outFile, src, dependencies, banner, opts, fileI
 	walk.walkSync(src, function(basedir, filename, stat) {
 		if (stat.isDirectory())
 			return;
-		if ( path.basename(filename, '.js') === "index"
-			|| filename === baseOutName
+		if ( filename === "index.js"
 			|| fileIgnores.indexOf(filename) !== -1)
 			return;
 
 		if (path.extname(filename) in require.extensions) {
 			var fullname = path.join(basedir, filename);
+
+			if (fullname === outFile)
+				return;
+
 			var reqName = fullname.split(path.sep);
 			reqName.shift(); //remove src folder
 

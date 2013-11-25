@@ -29,32 +29,18 @@ module.exports = function(grunt) {
 				// The file being generated is, of course, already ignored. 
 				// file_ignores: ['myutil.js'],
 				
-				// Options for our dependency modules...
 				modules: {
-
-					//The module name, then its options
-					'klasse': {
-						//If a string is given, we export the entire
-						//module by the given name. Result:
-						//	Class: require('klasse')
-						standalone: 'Class'
-
-						//If standalone is falsy, we can ignore individual
-						//exports like this:
-						//  ignores: ['myfunc']
-					},
-
-					//If we specify as null, this dependency will be ignored.
-					'minivec': null,
-					'fs-walk': null
+					'path': {
+						standalone: 'path'
+					}
 				},
 
 				// Optional list of dependencies. Leave undefined
 				// to use the package.json dependencies.
-				//   dependencies: ['']
+				  dependencies: ['path']
 			},
-			dest: '<%= dir.out %>/test/index.js',
-			src: 'tmp/'
+			dest: '<%= dir.out %>/index-umd.js',
+			src: '<%= dir.out %>'
 		}
 	}
 
