@@ -23,9 +23,7 @@ var buildIndex = function(grunt, outFile, src, dependencies, banner, opts, fileI
 
 	text += "module.exports = {\n";
 
-	var UMD_DEPS = (dependencies && dependencies.length !== 0) 
-			? dependencies 
-			: Object.keys( grunt.file.readJSON('package.json').dependencies );
+	var UMD_DEPS = dependencies;
 
 	var baseOutName = path.basename(outFile, '.js');
 
@@ -35,14 +33,13 @@ var buildIndex = function(grunt, outFile, src, dependencies, banner, opts, fileI
 	walk.walkSync(src, function(basedir, filename, stat) {
 		if (stat.isDirectory())
 			return;
-		if ( filename === "index.js"
-			|| fileIgnores.indexOf(filename) !== -1)
+		if ( filename === "index.js" )
 			return;
 
 		if (path.extname(filename) in require.extensions) {
 			var fullname = path.join(basedir, filename);
 
-			if (fullname === outFile)
+			if (fullname === outFile || fileIgnores.indexOf(fullname) !== -1)
 				return;
 
 			var reqName = fullname.split(path.sep);
@@ -139,8 +136,8 @@ module.exports = function(grunt) {
 		var srcFolder = this.data.src;
 
 		var deps = options.dependencies || Object.keys( grunt.file.readJSON('package.json').dependencies );
-
-		buildIndex(grunt, file, srcFolder, deps, grunt.template.process(options.banner), 
+		console.log(deps)
+		buildIndex(grunt, file, srcFolder, deps, options.banner, 
 					options.modules, options.file_ignores, options.require_ignores);
 
 	});

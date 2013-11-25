@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 
 				// Optional list of dependencies. Leave undefined
 				// to use the package.json dependencies.
-				  dependencies: ['path']
+				  dependencies: []
 			},
 			dest: '<%= dir.out %>/index-umd.js',
 			src: '<%= dir.out %>'
