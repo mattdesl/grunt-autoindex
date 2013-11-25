@@ -140,7 +140,7 @@ module.exports = function(grunt) {
 
 		var deps = options.dependencies || Object.keys( grunt.file.readJSON('package.json').dependencies );
 
-		buildIndex(grunt, file, srcFolder, deps, options.banner, 
+		buildIndex(grunt, file, srcFolder, deps, grunt.template.process(options.banner), 
 					options.modules, options.file_ignores, options.require_ignores);
 
 	});
