@@ -71,8 +71,7 @@ var buildIndex = function(grunt, outFile, src, dependencies, banner, opts, fileI
 		}
 
 		reqs.push({comment:depModule+' dependencies'});
-
-
+		
 		if (standalone) {
 			reqs.push({path: depModule, name: standalone});
 		} else {
