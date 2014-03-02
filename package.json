@@ -38,5 +38,8 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "dependencies": {
+    "fs-walk": "0.0.1"
+  }
 }
